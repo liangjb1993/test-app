@@ -1,0 +1,22 @@
+server:
+  #port: ${random.int[8600,8900]} #服务端口
+  port: 8777
+spring:
+  application:
+    name: user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: configserver
+      profile: service
+      label: master
+
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+      healthcheck:
+        enabled: true

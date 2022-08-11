@@ -1,0 +1,13 @@
+server:
+  port: 9002 #服务端口
+spring:
+  application:
+    name: eureka
+eureka:
+  server:
+    renewalPercentThreshold: 0.49
+  client:
+    register-with-eureka: true #是否将eureka自身作为应用注册到eureka注册中心
+    fetch-registry: true #为true时，可以启动，但报异常：Cannot execute request on any known server
+    serviceUrl:
+      defaultZone: http://eureka1.cn:9001/eureka/,http://eureka2.cn:9002/eureka/
